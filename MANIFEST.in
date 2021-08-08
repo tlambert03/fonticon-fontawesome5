@@ -1,8 +1,7 @@
 include LICENSE
 include README.md
 
-recursive-include tests *
+recursive-include * *.otf *.ttf
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 
-recursive-include docs *.md conf.py Makefile make.bat *.jpg *.png *.gif
