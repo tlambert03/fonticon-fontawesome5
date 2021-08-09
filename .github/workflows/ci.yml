@@ -3,7 +3,6 @@ name: CI
 on:
   push:
     branches:
-      - master
       - main
     tags:
       - "v*"
@@ -60,16 +59,15 @@ jobs:
         run: |
           git tag
           pip install --upgrade pip
-          pip install -U build wheel twine check-manifest
+          pip install -U build twine check-manifest
+
+      - name: build
+        run: |
           check-manifest
           python -m build
-
-      - name: twine check
-        run: |
           twine check dist/*
-          ls -lh dist
 
-      - name: Build and publish
+      - name: publish
         run: twine upload dist/*
         env:
           TWINE_USERNAME: __token__
