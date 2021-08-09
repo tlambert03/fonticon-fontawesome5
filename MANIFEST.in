@@ -1,6 +1,5 @@
 include LICENSE
 include README.md
-include *.py
 
 recursive-include * *.otf *.ttf *.txt
 recursive-exclude * __pycache__
