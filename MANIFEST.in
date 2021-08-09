@@ -1,7 +1,7 @@
 include LICENSE
 include README.md
+include *.py
 
-recursive-include * *.otf *.ttf
+recursive-include * *.otf *.ttf *.txt
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-
