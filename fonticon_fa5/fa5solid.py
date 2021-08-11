@@ -1,8 +1,8 @@
 from pathlib import Path
-from enum import Enum as FontEnum
+from enum import Enum
 
 
-class FA5Solid(FontEnum):
+class FA5Solid(Enum):
     @classmethod
     def _font_file(self) -> str:
         fonts = Path(__file__).parent / "fonts"

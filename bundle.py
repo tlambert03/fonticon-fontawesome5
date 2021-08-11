@@ -59,10 +59,10 @@ def normkey(key: str):
 
 TEMPLATE = """
 from pathlib import Path
-from enum import Enum as FontEnum
+from enum import Enum
 
 
-class {name}(FontEnum):
+class {name}(Enum):
     @classmethod
     def _font_file(self) -> str:
         fonts = Path(__file__).parent / "fonts"
