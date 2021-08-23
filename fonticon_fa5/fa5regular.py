@@ -1,13 +1,11 @@
 from pathlib import Path
-from enum import Enum
+from superqt.fonticon._iconfont import IconFont
+
+FONTS = Path(__file__).parent / "fonts"
 
 
-class FA5Regular(Enum):
-    @classmethod
-    def _font_file(self) -> str:
-        fonts = Path(__file__).parent / "fonts"
-        return str(fonts / "Font Awesome 5 Free-Regular-400.otf")
-
+class FA5R(IconFont):
+    __font_file__ = str(FONTS / "Font Awesome 5 Free-Regular-400.otf")
     address_book = '\uf2b9'
     address_card = '\uf2bb'
     angry = '\uf556'
