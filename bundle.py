@@ -41,7 +41,7 @@ def get_data(version, pkg_dir):
             style = "regular"
 
         charmap = {k: v["unicode"] for k, v in metadata.items() if style in v["styles"]}
-        name = f"FA{version[0]}{style.title()}"
+        name = f"FA{version[0]}{style[0].upper()}"
         out.append((charmap, otf, name))
     return out
 
@@ -59,14 +59,14 @@ def normkey(key: str):
 
 TEMPLATE = """
 from pathlib import Path
-from enum import Enum
+
+from ._iconfont import IconFont
+
+FONTS = Path(__file__).parent / "fonts"
 
 
-class {name}(Enum):
-    @classmethod
-    def _font_file(self) -> str:
-        fonts = Path(__file__).parent / "fonts"
-        return str(fonts / "{file}")
+class {name}(IconFont):
+    __font_file__ = str(FONTS / "{file}")
 """.strip()
 
 

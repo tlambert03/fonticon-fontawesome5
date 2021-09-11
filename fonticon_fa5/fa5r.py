@@ -1,11 +1,13 @@
 from pathlib import Path
-from superqt.fonticon._iconfont import IconFont
+
+from ._iconfont import IconFont
 
 FONTS = Path(__file__).parent / "fonts"
 
 
 class FA5R(IconFont):
     __font_file__ = str(FONTS / "Font Awesome 5 Free-Regular-400.otf")
+
     address_book = '\uf2b9'
     address_card = '\uf2bb'
     angry = '\uf556'
